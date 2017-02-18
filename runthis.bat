@@ -8,7 +8,7 @@ cls
 color 2f
 echo   $       $              **********$****
 echo **$**   **$**               $****$ $
-echo   $   $   $                 $****$ $
+echo   $       $                 $****$ $
 echo   *$**$**$*              **********$****
 echo ***$**$**$***               $****$ $
 echo   *$**$**$*                 $****$ $
@@ -17,28 +17,28 @@ echo       $                           *$
 echo.----------------------------------------------------------- 
 color 2e
 echo.-----------------------------------------------------------
-echo.Ý”ÈëÖ¸Áî£º
+echo.è¼¸å…¥æŒ‡ä»¤ï¼š
 echo.
-echo. 1.¸ü“Qhosts£¨ÔÚÏÂÃæÝ”Èë1£©
+echo. 1.æ›´æ›hostsï¼ˆåœ¨ä¸‹é¢è¼¸å…¥1ï¼‰
 echo.
-echo. 2.»ÖÍhosts£¨ÔÚÏÂÃæÝ”Èë2£©
+echo. 2.æ¢å¾©hostsï¼ˆåœ¨ä¸‹é¢è¼¸å…¥2ï¼‰
 echo.-----------------------------------------------------------
 
 if exist "%SystemRoot%\System32\choice.exe" goto Win7Choice
 
-set /p choice=Ý”Èë”µ×ÖÖ¸ÁîK°´Enter´_ÕJ:
+set /p choice=è¼¸å…¥æ•¸å­—æŒ‡ä»¤ä¸¦æŒ‰Enterç¢ºèª:
 
 echo.
 if %choice%==1 goto host DNS
 if %choice%==2 goto CL
 cls
 "set choice="
-echo Ý”ÈëÓÐÕ`£¬ÕˆÖØÐÂßx“ñ¡£
+echo è¼¸å…¥æœ‰èª¤ï¼Œè«‹é‡æ–°é¸æ“‡ã€‚
 ping 127.0.1 -n "2">nul
 goto main
 
 :Win7Choice
-choice /c 12 /n /m "Ý”ÈëŒ¦‘ª”µ×Ö£º"
+choice /c 12 /n /m "è¼¸å…¥å°æ‡‰æ•¸å­—ï¼š"
 if errorlevel 2 goto CL
 if errorlevel 1 goto host DNS
 cls
@@ -51,17 +51,17 @@ copy /y "hosts" "%SystemRoot%\System32\drivers\etc\hosts"
 ipconfig /flushdns
 echo.-----------------------------------------------------------
 echo.
-echo ¸ü“QHOSTSÎÄ¼þ³É¹¦£¡
+echo æ›´æ›HOSTSæ–‡ä»¶æˆåŠŸï¼
 goto end
 
 :CL
 cls
 color 2f
 @echo 127.0.0.1 localhost > %SystemRoot%\System32\drivers\etc\hosts
-echo »ÖÍHOSTSÎÄ¼þ³É¹¦£¡
+echo æ¢å¾©HOSTSæ–‡ä»¶æˆåŠŸï¼
 echo.
 goto end
 
 :end
-echo °´ÈÎÒâæIÍË³ö
+echo æŒ‰ä»»æ„éµé€€å‡º
 @Pause>nul
